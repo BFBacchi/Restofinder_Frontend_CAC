@@ -1,0 +1,116 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+@import url('./font.css');
+
+
+:root {
+    --primary-font: Josefin Sans, sans serif;
+    --secondary-font: Inconsolata, serif;
+    --third-font: Plus Jakarta Sans, sans serif;
+    --primary-background-color: #740c0c;
+    --primary-font-color: #ffd8d8;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--third-font);
+    display: flex;
+    flex-direction: column;
+    gap: 20vh;
+    background-color: var(--primary-background-color);
+    color: var(--primary-font-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-font-color);
+}
+
+a:hover {
+    opacity: 70%;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+img {
+    width: 20vw;
+}
+
+h1{
+    font-size: 3rem;
+}
+
+/*header section*/
+
+header {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+    gap: 50%;
+    top: 4vh;
+    left: 5vw;
+    right: 5vw;
+}
+
+.header-nav {
+    display: flex;
+    gap: 2vw;
+}
+
+/*main section*/
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 10vh;
+}
+
+.title-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-font-color);
+    color: var(--primary-background-color);
+}
+
+.category-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw;
+    max-height: 40%;
+}
+
+.category {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-font-color);
+    padding: 2vw;
+    border-radius: 10px;
+    max-width: 500px;
+    max-height: 400px;
+}
+
+.category a {
+    font-size: 1.5rem;
+    color: var(--primary-background-color);
+}
+
+.category img {
+    border-radius: 10px;
+    max-height: 160px;
+}
