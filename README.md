@@ -1,6 +1,6 @@
 # Guía de Restaurantes de la Capital Federal
 
-Este proyecto es parte del curso de Full Stack Python del programa Codo a Codo 2024. La guía de restaurantes de la capital federal es una aplicación web que permite a los usuarios explorar una variedad de restaurantes ubicados en la ciudad de Buenos Aires, Argentina.
+Este proyecto es parte del curso de Full Stack Python del programa Codo a Codo 2024. La guía de restaurantes de la Capital Federal es una aplicación web que permite a los usuarios explorar una variedad de restaurantes ubicados en la ciudad de Buenos Aires, Argentina.
 
 ## Funcionalidades
 
