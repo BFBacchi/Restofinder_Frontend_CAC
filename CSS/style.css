@@ -93,6 +93,7 @@ main {
     align-items: center;
     gap: 5vw;
     max-height: 40%;
+    text-align: center;
 }
 
 .category {
