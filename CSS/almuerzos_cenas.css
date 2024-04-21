@@ -44,7 +44,8 @@ button {
 }
 
 img {
-    width: 20vw;
+    height: 30vh;
+    object-fit: cover;
 }
 
 h1{
@@ -71,8 +72,3 @@ header {
 
 /*main section*/
 
-.restos-centro-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 2fr 2fr 2fr;
-}
