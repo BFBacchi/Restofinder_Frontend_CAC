@@ -44,7 +44,10 @@ button {
 }
 
 img {
-    width: 20vw;
+    object-fit: cover;
+    overflow: hidden;
+    max-height: 30vh;
+    max-width: 30vw;
 }
 
 h1{
@@ -58,7 +61,7 @@ header {
     flex-direction: row;
     position: relative;
     align-items: center;
-    gap: 50%;
+    gap: 45%;
     top: 4vh;
     left: 5vw;
     right: 5vw;
@@ -69,49 +72,43 @@ header {
     gap: 2vw;
 }
 
-/*index main section*/
+/*almuerzos main section*/
 
-main {
-    display: flex;
-    flex-direction: column;
-    gap: 10vh;
-}
-
-.title-main {
+.title-almuerzo {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--primary-font-color);
-    color: var(--primary-background-color);
 }
 
-.category-container {
+.resto-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*flexbox for section containing the restaurants divs*/
+
+.resto-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20vh;
+}
+.resto-div-section {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 5vw;
-    max-height: 40%;
-    text-align: center;
+    gap: 1vw;
 }
 
-.category {
-    display: flex;
-    flex-direction: column;
+.resto-div{
     background-color: var(--primary-font-color);
-    padding: 2vw;
-    border-radius: 10px;
-    max-width: 500px;
-    max-height: 400px;
-}
-
-.category a {
-    font-size: 1.5rem;
     color: var(--primary-background-color);
+    max-height: 300px;
+    max-width: 200px;
+    border-radius: 30px;
+    padding: 1vw;
 }
 
-.category img {
-    border-radius: 10px;
-    max-height: 160px;
+.resto-div a{
+    color: var(--primary-background-color);
 }
