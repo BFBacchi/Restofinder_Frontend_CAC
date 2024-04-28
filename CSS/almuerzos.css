@@ -43,6 +43,7 @@ button {
     border: none;
 }
 
+/*ACA PROBLEMA IMAGENES QUE NO SE AJUSTAN AL CONTENEDOR COMO HACER*/
 img {
     object-fit: cover;
     overflow: hidden;
