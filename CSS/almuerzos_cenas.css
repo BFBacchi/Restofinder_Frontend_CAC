@@ -71,12 +71,6 @@ header {
 
 /*main section*/
 
-.restos-centro-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 2fr 2fr 2fr;
-}
-
 .title-almuerzo {
     display: flex;
     flex-direction: column;
@@ -84,3 +78,14 @@ header {
     align-items: center;
 }
 
+.resto-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.resto-div-section {
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+}
