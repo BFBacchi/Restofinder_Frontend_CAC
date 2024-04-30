@@ -51,7 +51,7 @@ h1{
     font-size: 3rem;
 }
 
-/*header section*/
+/*general and index header section*/
 
 header {
     display: flex;
@@ -69,7 +69,7 @@ header {
     gap: 2vw;
 }
 
-/*main section*/
+/*almuerzos main section*/
 
 .title-almuerzo {
     display: flex;
@@ -84,8 +84,28 @@ header {
     justify-content: center;
 }
 
+/*flexbox for section containing the restaurants divs*/
+
+.resto-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20vh;
+}
 .resto-div-section {
     display: flex;
     flex-direction: row;
     gap: 1vw;
+}
+
+.resto-div{
+    background-color: var(--primary-font-color);
+    color: var(--primary-background-color);
+    max-height: 300px;
+    max-width: 200px;
+    border-radius: 30px;
+    padding: 1vw;
+}
+
+.resto-div a{
+    color: var(--primary-background-color);
 }
