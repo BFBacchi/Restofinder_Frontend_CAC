@@ -104,8 +104,21 @@ header {
     max-width: 200px;
     border-radius: 30px;
     padding: 1vw;
+    
+    
 }
 
 .resto-div a{
     color: var(--primary-background-color);
+    justify-content: center;
+}
+
+img{
+    width:150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+   margin: 0 auto;
+   display: block;
+  
 }
