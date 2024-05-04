@@ -76,12 +76,17 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+   
 }
-
+.titulos h1, h2{
+    padding: 20px;
+    text-align: center;
+}
 .resto-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    
 }
 
 /*flexbox for section containing the restaurants divs*/
@@ -90,11 +95,15 @@ header {
     display: flex;
     flex-direction: column;
     gap: 20vh;
+    padding: 300px;
+    
 }
 .resto-div-section {
-    display: flex;
-    flex-direction: row;
+    display:flex;
+    flex-direction:row;
     gap: 1vw;
+    margin-bottom: 50px;
+
 }
 
 .resto-div{
@@ -104,21 +113,26 @@ header {
     max-width: 200px;
     border-radius: 30px;
     padding: 1vw;
-    
-    
 }
 
-.resto-div a{
+.resto-div a, p{
     color: var(--primary-background-color);
-    justify-content: center;
+    text-align: center;
 }
+
+.resto-div h2{
+    padding: 10px;
+    text-align: center;
+}
+
+
 
 img{
     width:150px;
     height: 150px;
     object-fit: cover;
     border-radius: 10px;
-   margin: 0 auto;
-   display: block;
+    margin: 0 auto;
+    display: block;
   
 }

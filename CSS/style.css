@@ -115,3 +115,12 @@ main {
     border-radius: 10px;
     max-height: 160px;
 }
+
+.redes-sociales p, a{
+    display:flex;
+    text-align:center;
+    font-size: 1.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
