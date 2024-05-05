@@ -2,13 +2,17 @@
 @import url('./font.css');
 
 
+
 :root {
     --primary-font: Josefin Sans, sans serif;
     --secondary-font: Inconsolata, serif;
     --third-font: Plus Jakarta Sans, sans serif;
     --primary-background-color: #740c0c;
     --primary-font-color: #ffd8d8;
+    --secondary-background-color:  #720d0d;
+    --secondary-font-color:#c48282;
 }
+
 
 *{
     padding: 0;
@@ -94,6 +98,11 @@ main {
     gap: 5vw;
     max-height: 40%;
     text-align: center;
+}
+
+
+.category:hover{
+    transform: scale(1.1);
 }
 
 .category {

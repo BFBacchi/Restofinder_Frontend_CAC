@@ -8,6 +8,8 @@
     --third-font: Plus Jakarta Sans, sans serif;
     --primary-background-color: #740c0c;
     --primary-font-color: #ffd8d8;
+    --secondary-background-color:  #720d0d;
+    --secondary-font-color:#c48282;
 }
 
 *{
@@ -57,17 +59,19 @@ h2{
     font-size: 2rem;
 }
 
+
+
 /*general and index header section*/
 
 header {
     display: flex;
     flex-direction: row;
-    position: relative;
-    align-items: center;
-    gap: 45%;
-    top: 4vh;
-    left: 5vw;
-    right: 5vw;
+    position: fixed;
+    background-color: var(--primary-background-color);
+    width: 100%;
+    height: 10vh;
+    gap: 50%;
+    z-index: 10;
 }
 
 .header-nav {
@@ -75,12 +79,24 @@ header {
     gap: 2vw;
 }
 
+header h3, header a{
+    color: var(--primary-font-color);
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 4vw;
+}
+
+
 /*almuerzos main section*/
 
 main {
     display: flex;
     flex-direction: column;
     gap: 5vh;
+    position: relative;
+    top: 20vh;
+    z-index: 1;
 }
 
 .title-almuerzo {
@@ -121,6 +137,11 @@ main {
     padding: 2%;
 }
 
+.resto-div:hover{
+    transform: scale(1.1);
+    box-shadow: inset 0 0 0 5px var(--secondary-background-color);
+}
+
 .resto-div a{
     color: var(--primary-background-color);
 }
@@ -130,4 +151,18 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+/*media queries*/
+
+@media (max-width: 576px){
+
+}
+
+@media (max-width:768px){
+
+}
+
+@media (min-width:1200px){
+
 }
