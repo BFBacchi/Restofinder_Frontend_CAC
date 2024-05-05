@@ -44,7 +44,6 @@ button {
     border: none;
 }
 
-/*ACA PROBLEMA IMAGENES QUE NO SE AJUSTAN AL CONTENEDOR COMO HACER*/
 img {
     border-radius: 20px;
     max-width: 200px;
@@ -52,6 +51,10 @@ img {
 
 h1{
     font-size: 3rem;
+}
+
+h2{
+    font-size: 2rem;
 }
 
 /*general and index header section*/
@@ -74,6 +77,12 @@ header {
 
 /*almuerzos main section*/
 
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+}
+
 .title-almuerzo {
     display: flex;
     flex-direction: column;
@@ -85,6 +94,8 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
+    left: 1%;
 }
 
 /*flexbox for section containing the restaurants divs*/
@@ -112,4 +123,11 @@ header {
 
 .resto-div a{
     color: var(--primary-background-color);
+}
+
+/*footer section*/
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
