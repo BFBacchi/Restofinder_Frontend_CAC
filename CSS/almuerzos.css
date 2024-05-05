@@ -27,6 +27,7 @@ body {
     gap: 20vh;
     background-color: var(--primary-background-color);
     color: var(--primary-font-color);
+    max-width: 1200px;
 }
 
 a {
@@ -45,10 +46,8 @@ button {
 
 /*ACA PROBLEMA IMAGENES QUE NO SE AJUSTAN AL CONTENEDOR COMO HACER*/
 img {
-    object-fit: cover;
-    overflow: hidden;
-    max-height: 30vh;
-    max-width: 30vw;
+    border-radius: 20px;
+    max-width: 200px;
 }
 
 h1{
@@ -104,10 +103,11 @@ header {
 .resto-div{
     background-color: var(--primary-font-color);
     color: var(--primary-background-color);
-    max-height: 300px;
-    max-width: 200px;
     border-radius: 30px;
     padding: 1vw;
+    max-width: 300px;
+    max-height: 300px;
+    padding: 2%;
 }
 
 .resto-div a{
