@@ -121,6 +121,13 @@ main {
     max-height: 160px;
 }
 
+/*
+desglosar estilos para footer y otro estilo aparte para
+el p y el a, cada uno por separado
+uno que sea solo .redes-sociales, donde ira display flex, text align
+y justify content center
+por otro lado, se agrega color o padding de preferencia
+*/
 .redes-sociales p, .redes-sociales a{
     display:inline-flex;
     text-align:center;
