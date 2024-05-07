@@ -95,6 +95,7 @@ main {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    flex-wrap: nowrap;
     gap: 5vw;
     max-height: 40%;
     text-align: center;
