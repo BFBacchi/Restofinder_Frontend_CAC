@@ -1,7 +1,7 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 @import url('./font.css');
 
-
+/*GENERAL ROOT AND SETTINGS*/
 
 :root {
     --primary-font: Josefin Sans, sans serif;
@@ -47,41 +47,47 @@ button {
     border: none;
 }
 
-img {
-    width: 20vw;
-}
 
 h1{
     font-size: 3rem;
 }
 
-/*general and index header section*/
+h2{
+    font-size: 2rem;
+}
 
-header {
+/*INDEX CSS*/
+
+/*INDEX HEADER SECTION*/
+
+.index-header {
     display: flex;
     flex-direction: row;
     position: relative;
     align-items: center;
     gap: 50%;
     top: 4vh;
-    left: 5vw;
+    left: 10vw;
     right: 5vw;
 }
 
-.header-nav {
+.index-header-nav {
     display: flex;
+    flex-direction: row;
     gap: 2vw;
 }
 
-/*index main section*/
 
-main {
+
+/*INDEX MAIN SECTION*/
+
+.index-main {
     display: flex;
     flex-direction: column;
     gap: 10vh;
 }
 
-.title-main {
+.title-index-main {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -90,7 +96,7 @@ main {
     color: var(--primary-background-color);
 }
 
-.category-container {
+.index-category-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -102,11 +108,11 @@ main {
 }
 
 
-.category:hover{
+.index-category:hover{
     transform: scale(1.1);
 }
 
-.category {
+.index-category {
     display: flex;
     flex-direction: column;
     background-color: var(--primary-font-color);
@@ -116,12 +122,132 @@ main {
     max-height: 400px;
 }
 
-.category a {
+.index-category a {
     font-size: 1.5rem;
     color: var(--primary-background-color);
 }
 
-.category img {
+.index-category img {
     border-radius: 10px;
     max-height: 160px;
 }
+
+
+
+
+
+
+
+
+
+/*ALMUERZOS CSS*/
+
+.almuerzos-header {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    background-color: var(--primary-background-color);
+    width: 100%;
+    height: 10vh;
+    gap: 50%;
+    z-index: 10;
+}
+
+.almuerzos-header-nav {
+    display: flex;
+    gap: 2vw;
+}
+
+.almuerzos-header h3, .almuerzos-header a{
+    color: var(--primary-font-color);
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 4vw;
+}
+
+/*ALMUERZOS MAIN SECTION*/
+.almuerzos-main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 5vh;
+    position: relative;
+    top: 20vh;
+    bottom: 20vh;
+    right: 1vw;
+    left: 1vw;
+    z-index: 1;
+}
+
+
+.almuerzos-main img {
+    border-radius: 20px;
+    max-width: 200px;
+}
+.almuerzos-category{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 5vh;
+}
+
+.almuerzos-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.almuerzos-resto-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 20vh;
+    justify-content: center;
+    position: relative;
+}
+
+
+.almuerzos-resto-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 1%;
+    gap: 2vw;
+}
+
+.almuerzos-resto-div{
+    background-color: var(--primary-font-color);
+    color: var(--primary-background-color);
+    border-radius: 30px;
+    padding: 1vw;
+    max-width: 250px;
+    max-height: 300px;
+    padding: 1.5%;
+}
+
+.almuerzos-resto-div:hover{
+    transform: scale(1.1);
+    box-shadow: inset 0 0 0 5px var(--secondary-background-color);
+}
+
+.almuerzos-resto-div a{
+    color: var(--primary-background-color);
+}
+
+
+/*FOOTER GENERAL DISPOSITION*/
+
+footer{
+    font-size: 1.5rem;
+    position: relative;
+    top: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*MEDIA QUERIES*/
+
