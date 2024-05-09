@@ -142,7 +142,7 @@ h2{
 
 /*ALMUERZOS CSS*/
 
-.almuerzos-header {
+.pages-header {
     display: flex;
     flex-direction: row;
     position: fixed;
@@ -153,12 +153,12 @@ h2{
     z-index: 10;
 }
 
-.almuerzos-header-nav {
+.pages-header-nav {
     display: flex;
     gap: 2vw;
 }
 
-.almuerzos-header h3, .almuerzos-header a{
+.pages-header h3, .pages-header a{
     color: var(--primary-font-color);
     display: flex;
     align-items: center;
@@ -167,7 +167,7 @@ h2{
 }
 
 /*ALMUERZOS MAIN SECTION*/
-.almuerzos-main {
+.pages-main {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -181,25 +181,25 @@ h2{
 }
 
 
-.almuerzos-main img {
+.pages-main img {
     border-radius: 20px;
     max-width: 200px;
 }
-.almuerzos-category{
+.pages-category{
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     gap: 5vh;
 }
 
-.almuerzos-title {
+.pages-title {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.almuerzos-resto-container {
+.pages-resto-container {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -209,7 +209,7 @@ h2{
 }
 
 
-.almuerzos-resto-section {
+.pages-resto-section {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -217,7 +217,7 @@ h2{
     gap: 2vw;
 }
 
-.almuerzos-resto-div{
+.pages-resto-div{
     background-color: var(--primary-font-color);
     color: var(--primary-background-color);
     border-radius: 30px;
@@ -227,12 +227,12 @@ h2{
     padding: 1.5%;
 }
 
-.almuerzos-resto-div:hover{
+.pages-resto-div:hover{
     transform: scale(1.1);
     box-shadow: inset 0 0 0 5px var(--secondary-background-color);
 }
 
-.almuerzos-resto-div a{
+.pages-resto-div a{
     color: var(--primary-background-color);
 }
 
