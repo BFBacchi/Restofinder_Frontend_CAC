@@ -121,13 +121,14 @@ main {
     max-height: 160px;
 }
 
-.redes-sociales p, a{
-    display:inline-flex;
-    text-align:center;
-    font-size: 1 rem;
-    align-items:center;
+.redes-sociales {
+    display: flex;
     justify-content: center;
-    flex-direction: column;
+    align-items: center;
+}
+.redes-sociales p, a{
+    text-align:center;
+    font-size: 25px;
     padding: 15px;
 }
 
