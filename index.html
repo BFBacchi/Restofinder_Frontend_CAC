@@ -15,9 +15,43 @@
             <a href="#">Info</a>
             <a href="#">Contacto</a>
             <a href="#">Inicio de sesión</a>
+            <button id="openModalButton">Reservar</button>
+
+            <!-- Modal -->
+            <div id="reservationModal" class="modal">
+                <div class="modal-content">
+                    <span id="closeModalButton" class="close">&times;</span>
+                    <h2>Haga su reserva aqui</h2>
+                    <form id="reservationForm">
+                        <label for="name">Nombre:</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="email">Correo electrónico:</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="phone">Teléfono:</label>
+                        <input type="tel" id="phone" name="phone" required>
+
+                        <label for="date">Fecha de reserva:</label>
+                        <input type="date" id="date" name="date" required>
+
+                        <label for="time">Hora de reserva:</label>
+                        <input type="time" id="time" name="time" required>
+
+                        <label for="people">Número de personas:</label>
+                        <input type="number" id="people" name="people" required>
+
+                        <button type="submit">Reservar</button>
+                    </form>
+                </div>
+            </div>
         </nav>
     </header>
+
+
     <main class="index-main">
+
+
         <section class="title-index-main">
             <h1>Los mejores sitios gastronómicos</h1>
             <h2>No sabés dónde ir en ciudad de Buenos Aires? Explorá tus opciones aquí</h2>
@@ -42,9 +76,11 @@
         <div class="redes-sociales">
             <p>&copy;Restofinder 2019</p>
             <a href="http://www.instagram.com/restofindercaba/"><i class="bi bi-instagram"></i></a>
-            <a href="https://www.facebook.com/share/2B69YtZcH3JV5uMS/?mibextid=qi2Omg"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.facebook.com/share/2B69YtZcH3JV5uMS/?mibextid=qi2Omg"><i
+                    class="bi bi-facebook"></i></a>
         </div>
     </footer>
+    <script src="/script.js"></script>
 </body>
 
 </html>
