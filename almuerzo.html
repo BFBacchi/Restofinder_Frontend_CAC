@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almuerzos y Cenas</title>
+    <link rel="stylesheet" href="./contacto_style.css">
+</head>
+
+<body>
+    <header>
+        <h2><i class="bi bi-egg-fried"></i>Restofinder</h2>
+        <nav class="header-nav">
+            <a href="#">Info</a>
+            <a href="#">Contacto</a>
+            <a href="#">Inicio de sesion</a>
+            <a href="./index.html">Pagina principal</a>
+        </nav>
+    </header>
+    <main>
+        <section class="title-almuerzo">
+            <h1>Almuerzos</h1>
+            <h2>La ciudad ofrece opciones en gran variedad para disfrutar agradables mediodias, encontra aca la opcion
+                para vos!
+            </h2>
+        </section>
+        <section class="restos-centro-container">
+            <div class="restos-centro">
+            <h3>Restaurantes del centro</h3>
+            <div>
+                <img src="./IMAGES/Broccolino.jpg" alt="">
+                <h3>Broccolino</h3>
+                <p>Restaurante italiano</p>
+                <a href="">+INFO</a>
+                <!-- Botón para abrir el modal -->
+<button id="openModalButton">Reservar una mesa</button>
+
+<!-- Modal -->
+<div id="reservationModal" class="modal">
+    <div class="modal-content">
+        <span id="closeModalButton" class="close">&times;</span>
+        <h2>Haga su reserva aqui</h2>
+        <form id="reservationForm">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Teléfono:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="date">Fecha de reserva:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="time">Hora de reserva:</label>
+            <input type="time" id="time" name="time" required>
+
+            <label for="people">Número de personas:</label>
+            <input type="number" id="people" name="people" required>
+
+            <button type="submit">Reservar</button>
+        </form>
+    </div>
+</div>
+            </div>
+            <div>
+                <img src="./IMAGES/Iñaki.jpg" alt="">
+                <h3>Iñaki</h3>
+                <p>Restaurante vasco</p>
+                <a href="">+INFO</a>
+            </div>
+            <div>
+                <img src="./IMAGES/Mercado del centro.jpg" alt="">
+                <h3>Mercado del centro</h3>
+                <p>Cafe Restaurant</p>
+                <a href="">+INFO</a>
+            </div>
+            <div>
+                <img src="./IMAGES/Petit Colon.jpg" alt="">
+                <h3>Petit Colon</h3>
+                <p>Cafe Notable</p>
+                <a href="">+INFO</a>
+            </div>
+            <div>
+                <img src="./IMAGES/Restaurant centro asturiano.jpg" alt="">
+                <h3>Centro Asturiano</h3>
+                <p>Comida española y mediterránea</p>
+                <a href="">+INFO</a>
+            </div>
+        </div>
+        </section>
+    </main>
+    <footer>
+        <span>Restofinder 2019</span>
+        <div>
+            <i class="bi bi-instagram"></i>
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-envelope-at"></i>
+        </div>
+    </footer>
+    <script src="/script.js"></script>
+</body>
+
+</html>
