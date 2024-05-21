@@ -6,18 +6,24 @@ const phoneInput = document.getElementById("phone");
 const dateInput = document.getElementById("date");
 const timeInput = document.getElementById("time");
 const peopleInput = document.getElementById("people");
+const toggleBtn = document.querySelector('.toggle_btn');
+const toggleBtnIcon = document.querySelector('.toggle_btn i'); 
+const dropDownMenu = document.querySelector('.dropdown_menu');
+
 
 // Obtener los botones y el modal
-const openModalButton = document.getElementById("openModalButton");
+const openModalButtons = document.querySelectorAll('.action_btn');
 const closeModalButton = document.getElementById("closeModalButton");
 const reservationModal = document.getElementById("reservationModal");
 
 // Función para abrir el modal
-openModalButton.addEventListener("click", () => {
-    // Mostrar el modal
-    reservationModal.style.display = "block";
-    // Limpiar el formulario
-    resetForm();
+openModalButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        // Mostrar el modal
+        reservationModal.style.display = "block";
+        dropDownMenu.classList.add('closed');
+        resetForm();
+    });
 });
 
 // Función para cerrar el modal
@@ -29,6 +35,7 @@ closeModalButton.addEventListener("click", () => {
 window.addEventListener("click", (event) => {
     if (event.target == reservationModal) {
         reservationModal.style.display = "none";
+        
     }
 });
 
@@ -108,3 +115,13 @@ reservationForm.addEventListener("submit", (event) => {
         // Aquí puedes agregar el código para enviar los datos a tu servidor si es necesario
     }
 });
+
+toggleBtn.onclick = function () {
+    dropDownMenu.classList.toggle('open')
+    const isOpen = dropDownMenu.classList.contains('open')
+
+    toggleBtnIcon.classList = isOpen
+    ? 'fa-solid fa-xmark'
+    : 'fa-solid fa-bars'
+    
+}

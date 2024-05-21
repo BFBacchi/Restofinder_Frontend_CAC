@@ -44,6 +44,7 @@ a {
 }
 
 a:hover {
+    color: aqua;
     opacity: 70%;
 }
 
@@ -53,12 +54,17 @@ button {
     font-family: var(--third-font);
     color: var(--primary-background-color);
     background-color: var(--primary-font-color);
-    border-radius: 10%;
-    padding: 3%;
+    border-radius: 15px;
+    padding: 12px;
     font-size: 1rem;
+    cursor: pointer;
 }
-
-
+button:hover{
+    font-size: 1.05rem;
+}
+button:active{
+    scale: 1.05;
+}
 h1 {
     font-size: 3rem;
 }
@@ -79,13 +85,10 @@ iframe {
 
 .index-header {
     display: flex;
-    flex-direction: row;
-    position: relative;
+    justify-content: space-between;
     align-items: center;
-    gap: 30%;
-    top: 4vh;
-    left: 10vw;
-    right: 5vw;
+    padding: 10px;
+    margin: 10px;
 }
 
 .index-header-nav {
@@ -95,7 +98,59 @@ iframe {
     justify-content: center;
     gap: 6vw;
 }
+.toggle_btn{
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+/* DROPDOWN MENU */
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.dropdown_menu{
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background: rgba(255,   255 , 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
 
+.closed {
+    display: none;
+}
+
+.dropdown_menu.open {
+    height: 240px;
+}
+
+.dropdown_menu li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+}
+
+.dropdown_menu li:not(li .action_btn):hover{
+    background-color: rgba(240, 248, 255, 0.5); 
+    border-radius: 30px;
+}
+
+.dropdown_menu .action_btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 
 
 /*INDEX MAIN SECTION*/
@@ -150,14 +205,6 @@ iframe {
     border-radius: 10px;
     max-height: 160px;
 }
-
-
-
-
-
-
-
-
 
 /*ALMUERZOS CSS*/
 
@@ -283,14 +330,13 @@ footer {
 
 .modal {
     display: none;
-    position: fixed;
+    position: absolute;
     z-index: 1;
-    padding-top: 100px;
-    left: 0;
-    top: 0;
+    padding-top: 20px;
+   
     width: 100%;
     height: 100%;
-    overflow: auto;
+    overflow: scroll;
     background-color: rgba(0, 0, 0, 0.4);
 }
 
@@ -333,6 +379,7 @@ form label {
     margin-top: 10px;
     font-weight: bold;
     font-size: 14px;
+    
 }
 
 /* Estilos para los inputs */
@@ -340,7 +387,7 @@ form input {
     padding: 8px;
     margin-top: 4px;
     margin-bottom: 12px;
-    border-radius: 4px;
+    border-radius: 10px;
     border: 1px solid #ccc;
     font-size: 14px;
 }
@@ -363,3 +410,36 @@ form button:hover {
 }
 
 /*MEDIA QUERIES*/
+
+
+@media (max-width: 800px) {
+    .index-header-nav,
+    button {
+        display: none;
+    }
+
+     .toggle_btn {
+        padding: 10px;
+        display: block;
+    }
+    a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        
+    }
+
+    .dropdown_menu{
+        display: block;
+    }
+}
+
+@media (max-width: 576px) {
+    .dropdown_menu{
+        left: 2rem;
+        width: unset;
+    }
+
+
+}
