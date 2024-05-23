@@ -66,11 +66,11 @@ button:active{
     scale: 1.05;
 }
 h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 iframe {
@@ -158,7 +158,7 @@ iframe {
 .index-main {
     display: flex;
     flex-direction: column;
-    gap: 10vh;
+    gap: 5vh;
 }
 
 .title-index-main {
@@ -172,10 +172,10 @@ iframe {
 
 .index-category-container {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    flex-wrap: nowrap;
+    
     gap: 5vw;
     max-height: 40%;
     text-align: center;
@@ -316,14 +316,17 @@ iframe {
 
 /*FOOTER GENERAL DISPOSITION*/
 
-footer {
+.redes-sociales {
     font-size: 1.5rem;
-    position: relative;
-    top: 20vh;
+   
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+.redes-sociales a {
+    margin: 20px;
 }
 
 /*CONTACTO FORM GENERAL DISPOSITION*/
@@ -409,15 +412,38 @@ form button:hover {
     background-color: #45a049;
 }
 
+
+
 /*MEDIA QUERIES*/
 
 
 @media (max-width: 800px) {
-    .index-header-nav,
-    button {
-        display: none;
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1rem;
+    }
+    .index-main {
+        display: flex;
+        flex-direction: column;
+        gap: 3vh;
+    }
+    .index-category a {
+        font-size: 1rem;
+        
+    }
+    .index-category{
+        max-width: 350px;
+    }
+    .modal-content {
+        width: 90%;
     }
 
+    header button, .index-header nav {
+        display: none;
+    }
      .toggle_btn {
         padding: 10px;
         display: block;
@@ -440,6 +466,16 @@ form button:hover {
         left: 2rem;
         width: unset;
     }
-
-
+    .index-category a {
+        font-size: 0.75rem;
+        
+    }
+    .index-category{
+        max-width: 160px;
+    }
+    .index-main {
+        display: flex;
+        flex-direction: column;
+        gap: 1vh;
+    }
 }
