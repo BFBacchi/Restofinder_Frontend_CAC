@@ -20,7 +20,7 @@
         <h3><i class="bi bi-egg-fried"></i>Restofinder</h3>
         <nav class="index-header-nav">
           <a href="index.html">Inicio</a>
-          <a href="#">Contacto</a>
+          <a href="#" id="locationLink">Ubicación</a>
           <a href="#">Inicio de sesión</a>
         </nav>
         <button id="openModalButton" class="action_btn">Reservar</button>
@@ -29,7 +29,7 @@
         </div>
         <div class="dropdown_menu">
           <ul class="links">
-              <li><a href="#">Info</a></li>
+              <li><a href="index.html">Inicio</a></li>
               <li><a href="#">Contacto</a></li>
               <li><a href="#">Inicio de sesión</a></li>
               <button class="action_btn">Reservar</button>
@@ -252,19 +252,15 @@
                 </section>
             </section>
         </section>
-        <section class="pages-iframe">
-            <iframe src="https://www.google.com/maps/d/embed?mid=1Z9W0PScNwC9voFEBLEeIxEDSEMPwGuI&ehbc=2E312F"
-                width="640" height="480" scrolling="auto"></iframe>
-        </section>
-    </main>
-    <footer>
-        <p>&copy;Restofinder 2019</p>
-        <div>
-            <a href="http://www.instagram.com/restofindercaba/"><i class="bi bi-instagram"></i></a>
-            <a href="https://www.facebook.com/share/2B69YtZcH3JV5uMS/?mibextid=qi2Omg"><i
-                    class="bi bi-facebook"></i></a>
+        <div id="locationModal" class="modal-location">
+            <div class="modal-content-location">
+                <span id="closeLocationModalButton" class="close-location">&times;</span>
+                <h2>Nuestra Ubicación</h2>
+                <iframe src="https://www.google.com/maps/d/embed?mid=15WJLMb3aNe0swTo5bjPG05giZTHHnLo&ehbc=2E312F"
+                     scrolling="auto"></iframe>
+            </div>
         </div>
-    </footer>
+    </main>
 
     <footer>
         <div class="redes-sociales">

@@ -11,10 +11,14 @@ const toggleBtnIcon = document.querySelector('.toggle_btn i');
 const dropDownMenu = document.querySelector('.dropdown_menu');
 
 
-// Obtener los botones y el modal
+// Obtener los botones y el modal del form
 const openModalButtons = document.querySelectorAll('.action_btn');
 const closeModalButton = document.getElementById("closeModalButton");
 const reservationModal = document.getElementById("reservationModal");
+// Obtener los botones y el modal de la ubicacion
+const locationLink = document.getElementById('locationLink');
+const locationModal = document.getElementById('locationModal');
+const closeLocationModalButton = document.getElementById('closeLocationModalButton');
 
 // Función para abrir el modal
 openModalButtons.forEach(button => {
@@ -125,3 +129,18 @@ toggleBtn.onclick = function () {
     : 'fa-solid fa-bars'
     
 }
+
+locationLink.addEventListener('click', function (event) {
+    event.preventDefault();
+    locationModal.style.display = 'block';
+});
+
+closeLocationModalButton.addEventListener('click', function () {
+    locationModal.style.display = 'none';
+});
+
+window.addEventListener('click', function (event) {
+    if (event.target === locationModal) {
+        locationModal.style.display = 'none';
+    }
+});
