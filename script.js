@@ -17,6 +17,7 @@ const closeModalButton = document.getElementById("closeModalButton");
 const reservationModal = document.getElementById("reservationModal");
 // Obtener los botones y el modal de la ubicacion
 const locationLink = document.getElementById('locationLink');
+const locationModalLink = document.getElementById('locationModalLink');
 const locationModal = document.getElementById('locationModal');
 const closeLocationModalButton = document.getElementById('closeLocationModalButton');
 // Selecciona todos los elementos de los nombres de restaurantes
@@ -139,6 +140,12 @@ locationLink.addEventListener('click', function (event) {
     event.preventDefault();
     locationModal.style.display = 'block';
 });
+
+locationModalLink.addEventListener('click', function (event) {
+    event.preventDefault();
+    locationModal.style.display = 'block';
+});
+
 
 closeLocationModalButton.addEventListener('click', function () {
     locationModal.style.display = 'none';
