@@ -59,7 +59,15 @@
   
             <label for="people">Número de personas:</label>
             <input type="number" id="people" name="people" required />
-  
+            <label for="restaurant">Restaurante:</label>
+            <select id="restaurant" name="restaurant" required>
+                <option value="">Seleccione un restaurante</option>
+            </select>
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="sendTicket" name="sendTicket">
+                <label for="sendTicket">Enviar ticket de reserva a mi email</label>
+            </div>
             <button type="submit">Reservar</button>
           </form>
         </div>

@@ -19,6 +19,11 @@ const reservationModal = document.getElementById("reservationModal");
 const locationLink = document.getElementById('locationLink');
 const locationModal = document.getElementById('locationModal');
 const closeLocationModalButton = document.getElementById('closeLocationModalButton');
+// Selecciona todos los elementos de los nombres de restaurantes
+const restaurantDivs = document.querySelectorAll(".pages-resto-div h3");
+const restaurantSelect = document.getElementById("restaurant");
+
+
 
 // Función para abrir el modal
 openModalButtons.forEach(button => {
@@ -144,3 +149,39 @@ window.addEventListener('click', function (event) {
         locationModal.style.display = 'none';
     }
 });
+document.addEventListener("DOMContentLoaded", function() {
+    // Selecciona todos los elementos de los nombres de restaurantes
+    const restaurantDivs = document.querySelectorAll(".pages-resto-div h3");
+    const restaurantSelect = document.getElementById("restaurant");
+
+    restaurantDivs.forEach(restaurant => {
+        const option = document.createElement("option");
+        option.value = restaurant.textContent;
+        option.textContent = restaurant.textContent;
+        restaurantSelect.appendChild(option);
+    });
+});
+function mostrarAlerta() {
+    Swal.fire({
+        title: 'Explora la gastronomía de Buenos Aires',
+        text: 'Encuentra los mejores sitios gastronómicos en la ciudad de Buenos Aires con nuestra guía detallada.',
+        icon: 'info',
+        confirmButtonText: 'Visitar Sitio',
+        footer: '<a href="https://www.buenosaires.gob.ar/cultura/gastronomia">Más información</a>'
+    });
+}
+function mostrarAlertaContacto() {
+    Swal.fire({
+        title: 'Contacto',
+        html: `
+            <p>Si tienes alguna pregunta o necesitas más información, no dudes en contactarnos:</p>
+            <ul>
+                <li><strong>Email:</strong> contacto@sitiosgastronomicosba.com</li>
+                <li><strong>Teléfono:</strong> +54 11 1234 5678</li>
+                <li><strong>Dirección:</strong> Av. Siempre Viva 123, Buenos Aires, Argentina</li>
+            </ul>
+        `,
+        icon: 'info',
+        confirmButtonText: 'Cerrar'
+    });
+}
