@@ -74,7 +74,10 @@ h1 {
 h2 {
     font-size: 1.5rem;
 }
-
+.index-category-container h3{
+    color: #fff;
+    text-align: center;
+}
 
 
 /*INDEX CSS*/
@@ -172,15 +175,20 @@ h2 {
 
 .index-category-container {
     display: flex;
+    flex-direction: column;
+    justify-content: start;
+    
+}
+.contenedor {
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    
+    padding: 5%;
     gap: 5vw;
-    max-height: 40%;
+    max-height: 60%;
     text-align: center;
 }
-
 
 .index-category:hover {
     transform: scale(1.1);
