@@ -185,3 +185,32 @@ function mostrarAlertaContacto() {
         confirmButtonText: 'Cerrar'
     });
 }
+
+function mostrarAlertaInicioSesion() {
+    Swal.fire({
+        title: 'Iniciar Sesión',
+        html: `
+            <input type="text" id="username" class="swal2-input" placeholder="Nombre de usuario">
+            <input type="password" id="password" class="swal2-input" placeholder="Contraseña">
+        `,
+        focusConfirm: false,
+        preConfirm: () => {
+            const username = Swal.getPopup().querySelector('#username').value;
+            const password = Swal.getPopup().querySelector('#password').value;
+            if (!username || !password) {
+                Swal.showValidationMessage('Por favor, ingresa tu nombre de usuario y contraseña');
+            }
+            return { username: username, password: password };
+        },
+        confirmButtonText: 'Iniciar Sesión',
+        showCancelButton: true,
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            const { username, password } = result.value;
+            // Aquí puedes manejar la lógica de inicio de sesión con los valores username y password
+            console.log(`Nombre de usuario: ${username}, Contraseña: ${password}`);
+            Swal.fire(`Bienvenido, ${username}!`);
+        }
+    });
+}
