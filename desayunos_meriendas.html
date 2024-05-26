@@ -6,73 +6,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desayunos y meriendas</title>
     <link rel="stylesheet" href="./CSS/style.css">
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
     <header class="index-header">
         <h3><i class="bi bi-egg-fried"></i>Restofinder</h3>
         <nav class="index-header-nav">
-          <a href="index.html">Inicio</a>
-          <a href="#" id="locationLink">Ubicación</a>
-          <a href="#">Inicio de sesión</a>
+            <a href="index.html">Inicio</a>
+            <a id="locationLink">Ubicación</a>
+            <a onclick="mostrarAlertaInicioSesion()">Inicio de sesión</a>
         </nav>
         <button id="openModalButton" class="action_btn">Reservar</button>
         <div class="toggle_btn">
-          <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-bars"></i>
         </div>
         <div class="dropdown_menu">
-          <ul class="links">
-              <li><a href="index.html">Inicio</a></li>
-              <li><a href="#">Contacto</a></li>
-              <li><a href="#">Inicio de sesión</a></li>
-              <button class="action_btn">Reservar</button>
-          </ul>
-      </div>
-      </header>
-      <!-- Modal -->
-      <div id="reservationModal" class="modal">
-        <div class="modal-content">
-          <span id="closeModalButton" class="close">&times;</span>
-          <h2>Haga su reserva aqui</h2>
-          <form id="reservationForm">
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" name="name" required />
-  
-            <label for="email">Correo electrónico:</label>
-            <input type="email" id="email" name="email" required />
-  
-            <label for="phone">Teléfono:</label>
-            <input type="tel" id="phone" name="phone" required />
-  
-            <label for="date">Fecha de reserva:</label>
-            <input type="date" id="date" name="date" required />
-  
-            <label for="time">Hora de reserva:</label>
-            <input type="time" id="time" name="time" required />
-  
-            <label for="people">Número de personas:</label>
-            <input type="number" id="people" name="people" required />
-            <label for="restaurant">Restaurante:</label>
-            <select id="restaurant" name="restaurant" required>
-                <option value="">Seleccione un restaurante</option>
-            </select>
-
-            <div class="checkbox-container">
-                <input type="checkbox" id="sendTicket" name="sendTicket">
-                <label for="sendTicket">Enviar ticket de reserva a mi email</label>
-            </div>
-            <button type="submit">Reservar</button>
-          </form>
+            <ul class="links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a id="locationLink">Ubicación</a></a></li>
+                <li><a onclick="mostrarAlertaInicioSesion()">Inicio de sesión</a></li>
+                
+            </ul>
+            <button class="action_btn">Reservar</button>
         </div>
-      </div>
-  
+    </header>
+    <!-- Modal -->
+    <div id="reservationModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModalButton" class="close">&times;</span>
+            <h2>Haga su reserva aqui</h2>
+            <form id="reservationForm">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Teléfono:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="date">Fecha de reserva:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="time">Hora de reserva:</label>
+                <input type="time" id="time" name="time" required>
+
+                <label for="people">Número de personas:</label>
+                <input type="number" id="people" name="people" required>
+                <label for="restaurant">Restaurante:</label>
+                <select id="restaurant" name="restaurant" required>
+                    <option value="">Seleccione un restaurante</option>
+                </select>
+
+                <div class="checkbox-container">
+                    <input type="checkbox" id="sendTicket" name="sendTicket">
+                    <label for="sendTicket">Enviar ticket de reserva a mi email</label>
+                </div>
+                <button type="submit">Reservar</button>
+            </form>
+        </div>
+    </div>
+
 
 
 
@@ -292,7 +290,7 @@
                 <span id="closeLocationModalButton" class="close-location">&times;</span>
                 <h2>Nuestra Ubicación</h2>
                 <iframe src="https://www.google.com/maps/d/embed?mid=15WJLMb3aNe0swTo5bjPG05giZTHHnLo&ehbc=2E312F"
-                     scrolling="auto"></iframe>
+                    scrolling="auto"></iframe>
             </div>
         </div>
     </main>
@@ -301,16 +299,11 @@
 
 <footer>
     <div class="redes-sociales">
-      <p>&copy;Restofinder 2019</p>
-      <a href="http://www.instagram.com/restofindercaba/"
-        ><i class="bi bi-instagram"></i
-      ></a>
-      <a
-        href="https://www.facebook.com/share/2B69YtZcH3JV5uMS/?mibextid=qi2Omg"
-        ><i class="bi bi-facebook"></i
-      ></a>
+        <p>&copy;Restofinder 2019</p>
+        <a href="http://www.instagram.com/restofindercaba/"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.facebook.com/share/2B69YtZcH3JV5uMS/?mibextid=qi2Omg"><i class="bi bi-facebook"></i></a>
     </div>
-  </footer>
+</footer>
 
 
 <script src="script.js"></script>

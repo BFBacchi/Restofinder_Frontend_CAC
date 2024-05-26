@@ -234,6 +234,10 @@ h2 {
     left: 4vw;
 }
 
+.index-header-nav a {
+    cursor: pointer;
+}
+
 /*ALMUERZOS MAIN SECTION*/
 .pages-main {
     display: flex;
