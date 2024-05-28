@@ -38,6 +38,7 @@ body {
     background-color: var(--primary-background-color);
     color: var(--primary-font-color);
     height: 100%;
+    padding-top: 15vh;
 }
 
 a {
@@ -74,6 +75,11 @@ h1 {
 h2 {
     font-size: 1.5rem;
 }
+
+h3 {
+    padding: 2%;
+    text-align: center;
+}
 .index-category-container h3{
     color: #fff;
     text-align: center;
@@ -88,8 +94,23 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    margin: 10px;
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    background-color: #740c0c;
+    width: 100%;
+    height: 10vh;
+    z-index: 1000;
+}
+
+.index-header button {
+    margin-right: 2vw;
+}
+
+.modal-content h2, .modal-content-location h2{
+    color: var(--primary-background-color);
+    text-align: center;
 }
 
 .index-header-nav {
@@ -362,6 +383,9 @@ h2 {
     padding: 20px;
     border: 1px solid #888;
     width: 50%;
+    border-radius: 20px;
+    animation-name: modalAppear;
+    animation-duration: 0.4s;
 }
 
 .close {
@@ -452,6 +476,8 @@ form button:hover {
     border: 1px solid #888;
     width: 80%; 
     height: 90%;
+    animation-name: modalAppear;
+    animation-duration: 0.4s
 }
 .modal-content-location iframe {
     width: 100%;
@@ -585,3 +611,15 @@ form button:hover {
     }
     
 }
+
+/* Animación de aparición */
+@keyframes modalAppear {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
