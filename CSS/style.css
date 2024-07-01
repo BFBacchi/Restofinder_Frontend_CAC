@@ -235,6 +235,34 @@ h3 {
     max-height: 160px;
 }
 
+/*Crud*/
+#list-table-reservas {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    
+}
+table, th, td {
+    border: 1px solid black; /* Aplica bordes de 1px en todas las celdas y la tabla */
+  }
+
+  th, td {
+    padding: 8px; /* Agrega espacio interno a las celdas */
+    text-align: left; /* Alinea el texto a la izquierda */
+  }
+
+  th {
+    color: #720d0d;
+    background-color: #f2f2f2; /* Color de fondo para las celdas de encabezado */
+  }
+
+  tr:nth-child(even) {
+    background-color: #b63636;
+  }
+  
+  tr:nth-child(odd) {
+    background-color: #aa1f1f;
+  }
 /*ALMUERZOS CSS*/
 
 .pages-header {

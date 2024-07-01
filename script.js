@@ -75,7 +75,7 @@ function validateForm() {
     // Validar número de teléfono
     const phonePattern = /^[0-9]{10}$/; // Asegúrate de adaptar el patrón a tus necesidades
     if (!phonePattern.test(phoneInput.value.trim())) {
-        errorMessage += "El número de teléfono no es válido.\n";
+        errorMessage += "El número de teléfono no es válido. debe tener 10 digitos\n";
         isValid = false;
     }
 
@@ -113,18 +113,6 @@ function validateForm() {
     return isValid;
 }
 
-// Capturar el evento de envío del formulario
-reservationForm.addEventListener("submit", (event) => {
-    event.preventDefault(); // Evitar el envío del formulario por defecto
-
-    // Validar el formulario antes de enviar
-    if (validateForm()) {
-        // Si la validación es exitosa, puedes manejar los datos de la reserva aquí
-        alert("Reserva realizada con éxito.");
-        reservationModal.style.display = "none";
-        // Aquí puedes agregar el código para enviar los datos a tu servidor si es necesario
-    }
-});
 
 toggleBtn.onclick = function () {
     dropDownMenu.classList.toggle('open')
@@ -157,17 +145,10 @@ window.addEventListener('click', function (event) {
     }
 });
 document.addEventListener("DOMContentLoaded", function() {
-    // Selecciona todos los elementos de los nombres de restaurantes
-    const restaurantDivs = document.querySelectorAll(".pages-resto-div h3");
-    const restaurantSelect = document.getElementById("restaurant");
-
-    restaurantDivs.forEach(restaurant => {
-        const option = document.createElement("option");
-        option.value = restaurant.textContent;
-        option.textContent = restaurant.textContent;
-        restaurantSelect.appendChild(option);
-    });
+    // Array de nombres de restaurantes
+    
 });
+
 function mostrarAlerta() {
     Swal.fire({
         title: 'Explora la gastronomía de Buenos Aires',
