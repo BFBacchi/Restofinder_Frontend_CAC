@@ -26,7 +26,6 @@
       <nav class="index-header-nav">
         <a  onclick="mostrarAlerta()">Info</a>
         <a onclick="mostrarAlertaContacto()">Contacto</a>
-        <a href="crud.html">Reservas</a>
         <a onclick="mostrarAlertaInicioSesion()">Inicio de sesión</a>
       </nav>
       <button id="openModalButton" class="action_btn">Reservar</button>
@@ -80,32 +79,22 @@
       </div>
     </div>
     
-    <main class="index-main">
-      <section class="title-index-main">
-        <h1>Los mejores sitios gastronómicos</h1>
-        <h2>
-          No sabés dónde ir en ciudad de Buenos Aires?
-        </h2>
-      </section>
-      <section class="index-category-container">
-        <h3> Explorá tus opciones aquí</h3>
-        <div class="contenedor">
-          <div class="index-category">
-            <img src="./IMAGES/merienda.jpg" alt="desayunos_meriendas">
-            <a href="./desayunos_meriendas.html">Desayunos y Meriendas</a>
-          </div>
-          <div class="index-category">
-            <img src="./IMAGES/almuerzo.jpg" alt="almuerzos">
-            <a href="./almuerzos.html">Almuerzos</a>
-          </div>
-          <div class="index-category">
-            <img src="./IMAGES/imagencenas.jpg" alt="cenas">
-            <a href="./cenas.html">Cenas</a>
-          </div>
-        </div>
-        
-      </section>
-    </main>
+    <table id="list-table-reservas">
+        <thead>
+            <tr>
+                <th>Correo</th>
+                <th>Teléfono</th>
+                <th>Fecha de Reserva</th>
+                <th>Nombre</th>
+                <th>Número de Personas</th>
+                <th>Hora de Reserva</th>
+                <th>Restaurante</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
     <footer>
       <div class="redes-sociales">
         <p>&copy;Restofinder 2019</p>
@@ -118,6 +107,8 @@
         ></a>
       </div>
     </footer>
-    <script src="script.js"></script>
+    
+    
+    <script src="crud-reservas-fetch.js"></script>
   </body>
 </html>
