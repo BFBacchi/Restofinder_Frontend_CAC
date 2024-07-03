@@ -1,4 +1,4 @@
-const BASEURL = 'http://127.0.0.1:5000';
+const BASEURL = 'https://bfbmahakala.pythonanywhere.com/';
 
 async function fetchData(url, method, data = null) {
   const options = {
