@@ -40,7 +40,7 @@ async function showReservas() {
         <td>${reserva.Hora_de_reserva}</td>
         <td>${reserva.Restaurante}</td>
         <td>
-          <button class="btn-cac" onclick='updateReserva(${reserva.idreserva})'><i class="fa fa-pencil"></i></button>
+          <button class="btn-cac" onclick='editReserva(${reserva.idreserva})'><i class="fa fa-pencil"></i></button>
           <button class="btn-cac" onclick='deleteReserva(${reserva.idreserva})'><i class="fa fa-trash"></i></button>
         </td>
       </tr>`;
@@ -67,17 +67,17 @@ document.addEventListener('DOMContentLoaded', function () {
     "Niño Gordo", "Nikkai Shokudo", "Saigón", "Una Canción Coreana", "Asian Cantina", 
     "Casa Munay", "Mudra", "Hierbabuena", "Sacro", "Seibo", "Mishiguene", 
     "Restaurant Armenia", "Tandoor", "Las Morochas", "Senses New York"
-];
+  ];
 
-const restaurantSelect = document.getElementById("restaurant");
+  const restaurantSelect = document.getElementById("restaurant");
 
-// Itera sobre el array de nombres de restaurantes y crea opciones para el select
-restaurantNames.forEach(restaurantName => {
+  // Itera sobre el array de nombres de restaurantes y crea opciones para el select
+  restaurantNames.forEach(restaurantName => {
     const option = document.createElement("option");
     option.value = restaurantName;
     option.textContent = restaurantName;
     restaurantSelect.appendChild(option);
-});
+  });
 });
 
 // Capturar el evento de envío del formulario
@@ -95,31 +95,40 @@ document.getElementById("reservationForm").addEventListener("submit", async (eve
     Restaurante: document.getElementById("restaurant").value
   };
 
-  // Validar el formulario antes de enviar (aquí puedes implementar tu lógica de validación)
+  const idReserva = document.getElementById("reservationForm").dataset.idReserva;
 
-  // Ejecutar la creación de la reserva
   try {
-    const newReservation = await createReservation(formData);
-    console.log("Reserva creada:", newReservation);
+    if (idReserva) {
+      // Actualizar la reserva existente
+      const updatedReservation = await updateReservation(idReserva, formData);
+      console.log("Reserva actualizada:", updatedReservation);
+      Swal.fire({
+        icon: 'success',
+        title: '¡Éxito!',
+        text: 'Reserva actualizada con éxito.',
+      });
+      document.getElementById("reservationForm").removeAttribute("data-id-reserva");
+    } else {
+      // Crear una nueva reserva
+      const newReservation = await createReservation(formData);
+      console.log("Reserva creada:", newReservation);
+      Swal.fire({
+        icon: 'success',
+        title: '¡Éxito!',
+        text: 'Reserva realizada con éxito.',
+      });
+    }
 
-    // Limpiar el formulario o realizar otras acciones necesarias
+    // Limpiar el formulario y actualizar la tabla de reservas
     document.getElementById("reservationForm").reset();
-    Swal.fire({
-      icon: 'success',
-      title: '¡Éxito!',
-      text: 'Reserva realizada con éxito.',
-    });
-    // Cerrar el formulario modal
     document.getElementById("reservationModal").style.display = "none";
-
-    // Opcional: Actualizar la tabla de reservas mostrando la nueva reserva
     showReservas();
   } catch (error) {
-    console.error("Error al crear reserva:", error);
+    console.error("Error al gestionar reserva:", error);
     Swal.fire({
       icon: 'error',
       title: 'Oops...',
-      text: 'Ocurrió un error al crear la reserva. Por favor, inténtalo nuevamente.',
+      text: 'Ocurrió un error al gestionar la reserva. Por favor, inténtalo nuevamente.',
     });
   }
 });
@@ -132,6 +141,19 @@ async function createReservation(formData) {
   try {
     const response = await fetchData(url, method, formData);
     return response; // Suponiendo que el servidor responde con la nueva reserva creada
+  } catch (error) {
+    throw new Error(error.message);
+  }
+}
+
+// Función para actualizar una reserva existente
+async function updateReservation(id, formData) {
+  const url = `${BASEURL}/api/reservas/${id}`;
+  const method = 'PUT';
+
+  try {
+    const response = await fetchData(url, method, formData);
+    return response; // Suponiendo que el servidor responde con la reserva actualizada
   } catch (error) {
     throw new Error(error.message);
   }
@@ -151,7 +173,7 @@ function deleteReserva(id) {
   });
 }
 
-async function updateReserva(id) {
+async function editReserva(id) {
   // Mostrar el modal
   const reservationModal = document.getElementById("reservationModal");
   reservationModal.style.display = "block";
@@ -164,7 +186,7 @@ async function updateReserva(id) {
   document.getElementById("email").value = response.Mail;
   document.getElementById("phone").value = response.Telefono;
   document.getElementById("date").value = response.Fecha_reserva;
-  document.getElementById("time").value = response.Hora_de_reserva;
+  document.getElementById("time").value = formatTime(response.Hora_de_reserva);
   document.getElementById("people").value = response.Numero_de_personas;
   document.getElementById("restaurant").value = response.Restaurante;
 
@@ -172,49 +194,12 @@ async function updateReserva(id) {
   const submitButton = document.querySelector("#reservationForm button[type='submit']");
   submitButton.textContent = "Guardar";
 
-  // Añadir un event listener para actualizar la reserva cuando se guarden los cambios
-  document.getElementById("reservationForm").onsubmit = async function(event) {
-    event.preventDefault(); // Evitar el envío del formulario por defecto
-
-    // Obtener los valores del formulario
-    const updatedFormData = {
-      Nombre: document.getElementById("name").value,
-      Mail: document.getElementById("email").value,
-      Telefono: document.getElementById("phone").value,
-      Fecha_reserva: document.getElementById("date").value,
-      Hora_de_reserva: document.getElementById("time").value,
-      Numero_de_personas: parseInt(document.getElementById("people").value),
-      Restaurante: document.getElementById("restaurant").value
-    };
-
-    // Ejecutar la actualización de la reserva
-    try {
-      const updatedReservation = await fetchData(`${BASEURL}/api/reservas/${id}`, 'PUT', updatedFormData);
-      console.log("Reserva actualizada:", updatedReservation);
-
-      // Limpiar el formulario o realizar otras acciones necesarias
-      document.getElementById("reservationForm").reset();
-      Swal.fire({
-        icon: 'success',
-        title: '¡Éxito!',
-        text: 'Reserva actualizada con éxito.',
-      });
-
-      // Cerrar el formulario modal
-      reservationModal.style.display = "none";
-
-      // Actualizar la tabla de reservas mostrando la reserva actualizada
-      showReservas();
-    } catch (error) {
-      console.error("Error al actualizar reserva:", error);
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Ocurrió un error al actualizar la reserva. Por favor, inténtalo nuevamente.',
-      });
-    }
-
-    // Restaurar el event listener original
-    document.getElementById("reservationForm").onsubmit = originalSubmitEventListener;
-  };
+  // Guardar el ID de la reserva en el formulario
+  document.getElementById("reservationForm").dataset.idReserva = id;
+}
+// Función para convertir el formato de hora a "HH:mm"
+function formatTime(timeString) {
+  // Asumiendo que timeString viene en formato 'HH:MM:SS' o 'HH:MM:SS.mmm'
+  const [hours, minutes] = timeString.split(':');
+  return `${hours.padStart(2, '0')}:${minutes.padStart(2, '0')}`;
 }
