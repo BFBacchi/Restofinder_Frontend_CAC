@@ -18,5 +18,5 @@ Este proyecto es parte del curso de Full Stack Python del programa Codo a Codo 2
 - **Git**: Para control de versiones.
 - **GitHub Pages**: Para el alojamiento del sitio web de forma gratuita, paar ver el sitio haga click([aqui](https://bfbacchi.github.io/Restofinder_Frontend_CAC/))
 
-## (Respositorio de Backend)[https://github.com/BFBacchi/cac_backend_restofinder.git]
+# [Respositorio de Backend](https://github.com/BFBacchi/cac_backend_restofinder.git)
 
